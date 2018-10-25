@@ -4,8 +4,6 @@
 
     <h1 class="top-title">Mongo News Scraper</h1>
 
-    <h3 class="sub-title">New York Times Edition</h3>
-
   </div>
 
 </div>
@@ -42,7 +40,7 @@
 
       {{#each articles}}
 
-      <div class="panel panel-primary">
+      <div class="panel">
 
         <div class="panel-heading">
 
@@ -56,29 +54,13 @@
 
             <div class="col-md-2">
 
-              <button class="btn btn-warning comment-button" data-id="{{this._id}}">Comment</button>
+              <button class="btn comment-button" data-id="{{this._id}}">Comment</button>
 
-              <button class="btn btn-success unsave-button" data-id="{{this._id}}">Remove Article</button>
+              <button class="btn unsave-button" data-id="{{this._id}}">Remove Article</button>
 
             </div>
 
           </div>
-
-        </div>
-
-        <div class="panel-body">
-
-          {{#if this.summary}}
-
-          <p>{{this.summary}}</p>
-
-          {{/if}}
-
-          {{#unless this.summary}}
-
-          <p>No Summary Avaliable</p>
-
-          {{/unless}}
 
         </div>
 
@@ -93,9 +75,7 @@
 </div>
 
 
-
 {{/if}}
-
 
 
 {{#each articles}}
@@ -108,7 +88,7 @@
 
       <div class="modal-header">
 
-        <button class="modalClose close" data-id="{{this._id}}"><span class="close">&times;</span></button>
+        <button class="modalClose close" data-id="{{this._id}}"><span class="close"></span></button>
 
         <h4 class="modal-title blackText" id="sentModalLabel">{{this.title}}</h4>
 
@@ -116,7 +96,7 @@
 
       <div class="modal-body">
 
-        <div class="panel panel-primary">
+        <div class="panel">
 
           <div class="panel-heading">
 
@@ -132,7 +112,7 @@
 
             <br>
 
-            <button data-id={{this._id}} id="savecomment" class="btn btn-primary">Submit Comment</button>
+            <button data-id={{this._id}} id="savecomment" class="btn">Submit Comment</button>
 
           </div>
 
@@ -140,7 +120,7 @@
 
         <br>
 
-        <div class="panel panel-primary">
+        <div class="panel">
 
           <div class="panel-heading">
 
@@ -154,7 +134,7 @@
 
             <div class="comment">
 
-              {{this.body}}<button data-comment={{this._id}} id="deletecomment" class="btn btn-primary pull-right">&times;</button>
+              {{this.body}}<button data-comment={{this._id}} id="deletecomment" class="btn"></button>
 
             </div>
 
