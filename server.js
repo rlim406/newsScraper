@@ -6,7 +6,6 @@ var axios = require("axios");
 var cheerio = require("cheerio");
 var db = require("./models");
 var PORT = process.env.PORT || 3000;
-// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1/mongoNewsScraper";
 
 var app = express();
 var exphbs = require("express-handlebars");
@@ -15,8 +14,6 @@ app.set("view engine", "handlebars");
 app.use(logger("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
-
-// mongoose.Promise = Promise;
 
 mongoose.connect("mongodb://localhost/scraping_db", { useNewUrlParser: true });
 
