@@ -19,6 +19,8 @@ mongoose.connect("mongodb://localhost/scraping_db", { useNewUrlParser: true });
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraping_db";
 
+mongoose.connect(MONGODB_URI);
+
 app.get("/scrape", function (req, res) {
 
 
