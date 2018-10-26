@@ -17,7 +17,7 @@ app.use(express.static("public"));
 
 mongoose.connect("mongodb://localhost/scraping_db", { useNewUrlParser: true });
 
-
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraping_db";
 
 app.get("/scrape", function (req, res) {
 
